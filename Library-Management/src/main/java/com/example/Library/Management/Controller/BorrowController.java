@@ -35,19 +35,6 @@ public class BorrowController {
         System.out.println("Received ID: " + id);
         return borrowService.returnBook(id);
     }
-//    @PostMapping("/returnBook/{id}")
-//    public String returnBook(@PathVariable String id, @RequestBody BorrowRequest request) {
-//        System.out.println("Received ID from path: " + id);
-//        System.out.println("Received ID from body: " + request.getId());
-//        System.out.println("Received ISBN: " + request.getIsbn());
-//
-//        if (request.getId() == null || request.getIsbn() == null) {
-//            System.out.println("ID or ISBN is null");
-//            return "ID or ISBN cannot be null";
-//        }
-//
-//        return borrowService.returnBook(request.getIsbn());
-//    }
 
 
     @GetMapping("/member/{memberId}")

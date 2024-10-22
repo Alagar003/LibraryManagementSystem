@@ -11,11 +11,12 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Repository
 public class BorrowDao implements BorrowManagement {
-    private Map<String, BorrowRecord> Borrows = new HashMap<>();
-    private Map<String, List<String>> MemberBorrowed = new HashMap<>();
+    private Map<String, BorrowRecord> Borrows = new ConcurrentHashMap<>();
+    private Map<String, List<String>> MemberBorrowed = new ConcurrentHashMap<>();
 
     @Autowired
     private BookService bookService;
